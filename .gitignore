@@ -1,0 +1,13 @@
+# Rust
+target/
+/.cargo/*.toml
+
+# Nodes tools
+/node_modules
+
+# IDEs
+.idea/
+
+# Local environment
+.env
+*.pem
