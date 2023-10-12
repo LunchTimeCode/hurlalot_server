@@ -9,6 +9,9 @@
     clippy::module_name_repetitions
 )]
 
+mod hurl_ext;
+mod api;
+
 #[macro_use]
 extern crate rocket;
 #[cfg(test)]
@@ -36,7 +39,7 @@ mod tests {
 
     #[fixture]
     fn client() -> Client {
-        Client::tracked(rocket::build().mount("/", routes![healthz])).unwrap()
+        Client::tracked(rocket::build().mount("/", routes![healthz, api::parse])).unwrap()
     }
 
     #[rstest]
