@@ -7,6 +7,7 @@ bt := '0'
 log := "warn"
 
 export JUST_LOG := log
+export ROCKET_PORT := "3721"
 
 image_name := "ghcr.io/optravis-llc/hurlalot_server"
 hurl_opts := "--variables-file hurl.env.test --test"

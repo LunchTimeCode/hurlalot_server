@@ -4,3 +4,5 @@ services:
   hurlalot_server:
     image: ghcr.io/optravis-llc/hurlalot_server
     network_mode: host
+    environment:
+      ROCKET_PORT: 3721
