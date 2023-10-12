@@ -20,7 +20,7 @@ jobs:
         with:
           tool: cargo-hack@0.5,cargo-deny@0.13,just@1,hurl@4,cargo-edit@0.12
       - run: just test lint
-      - uses: docker/setup-buildx-action@v2
+      - uses: docker/setup-buildx-action@v3
       - uses: szenius/set-timezone@v1.2
         with:
           timezoneLinux: "Europe/Zurich"
