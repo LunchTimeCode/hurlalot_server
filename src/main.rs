@@ -9,8 +9,8 @@
     clippy::module_name_repetitions
 )]
 
-mod hurl_ext;
 mod api;
+mod hurl_ext;
 
 #[macro_use]
 extern crate rocket;
@@ -25,7 +25,7 @@ fn healthz() {}
 #[rocket::main]
 async fn main() -> anyhow::Result<()> {
     rocket::build()
-        .mount("/api", routes![healthz,])
+        .mount("/api", routes![healthz, api::parse])
         .launch()
         .await?;
     Ok(())

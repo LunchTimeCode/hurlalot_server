@@ -16,17 +16,12 @@ hurl_opts := "--variables-file hurl.env.test --test"
 	just --list --unsorted
 
 # Perform all verifications (compile, test, lint, etc.)
-verify: test build (up "-d") api-test lint
-    docker-compose down
+verify: test shutdown run-release api-test lint
+
 
 # Run the service locally (from sources)
 run:
 	cargo run
-
-# Run the test stack using docker compose
-up *args: build
-	docker-compose down
-	docker-compose up {{args}}
 
 # Watch the source files and run `just verify` when source changes
 watch:
@@ -82,3 +77,10 @@ fmt:
 release *args:
 	npm install --no-save conventional-changelog-conventionalcommits @semantic-release/exec
 	npx semantic-release {{args}}
+
+shutdown:
+    lsof -t -i:{{ROCKET_PORT}} | xargs -r kill
+
+run-release: shutdown
+    cargo build --release
+    ./target/release/hurlalot_server &

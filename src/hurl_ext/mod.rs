@@ -1,5 +1,4 @@
 pub mod ext {
-    use hurl_core4::ast::HurlFile;
     use hurl_core4::parser::ParseError;
     use serde::Serialize;
 
@@ -59,7 +58,7 @@ pub mod ext {
 
     pub fn try_parse(s: &str) -> Result<String, HurlParseError> {
         match hurl_core4::parser::parse_hurl_file(s) {
-            Ok(_) => Ok("".into()),
+            Ok(_) => Ok(String::new()),
             Err(err) => Err(err.into()),
         }
     }
