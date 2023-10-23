@@ -21,7 +21,10 @@ verify: test shutdown run-release api-test lint
 
 # Run the service locally (from sources)
 run:
-	cargo run
+	cargo shuttle run --port 3721
+
+deploy:
+    cargo shuttle deploy
 
 # Watch the source files and run `just verify` when source changes
 watch:
@@ -82,5 +85,4 @@ shutdown:
     lsof -t -i:{{ROCKET_PORT}} | xargs -r kill
 
 run-release: shutdown
-    cargo build --release
-    ./target/release/hurlalot_server &
+    just run &
