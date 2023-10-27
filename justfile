@@ -86,3 +86,6 @@ shutdown:
 
 run-release: shutdown
     just run &
+
+deploy:
+	cargo-shuttle deploy
