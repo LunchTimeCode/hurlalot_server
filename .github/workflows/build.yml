@@ -22,3 +22,6 @@ jobs:
       - run: cargo binstall -y --locked cargo-shuttle
       - name: Verify
         run: just verify
+      - uses: shuttle-hq/deploy-action@main
+        with:
+          deploy-key: ${{ secrets.SHUTTLE_DEPLOY_KEY }}
