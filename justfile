@@ -21,10 +21,10 @@ verify: test shutdown run-release api-test lint
 
 # Run the service locally (from sources)
 run:
-	cargo shuttle run --port 3721
+	cargo-shuttle run --port 3721
 
 deploy:
-    cargo shuttle deploy
+    cargo-shuttle deploy
 
 # Watch the source files and run `just verify` when source changes
 watch:
