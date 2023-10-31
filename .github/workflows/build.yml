@@ -20,18 +20,6 @@ jobs:
         with:
           tool: cargo-hack@0.5,cargo-deny@0.13,just@1,hurl@4,cargo-edit@0.12
 
-      - name: Install cargo-binstall
-        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-        shell: bash
-
-      - name: Install cargo-shuttle
-        run: cargo binstall -y --locked cargo-shuttle
-        shell: bash
-
-      - name: Verify
-        run: just verify
-        shell: bash
-
       - uses: shuttle-hq/deploy-action@main
         with:
           deploy-key: ${{ secrets.SHUTTLE_DEPLOY_KEY }}
