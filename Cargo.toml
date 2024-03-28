@@ -10,7 +10,7 @@ rust-version = "1.72.0"
 rocket = { version = "=0.5.0", features = ["json", "http2", "uuid"] }
 shuttle-rocket = "0.42.0"
 shuttle-runtime = "0.42.0"
-tokio = "1.26.0"
+tokio = "1.37.0"
 
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
