@@ -7,7 +7,7 @@ rust-version = "1.72.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rocket = { version = "=0.5.0", features = ["json", "http2", "uuid"] }
+rocket = { version = "=0.5.1", features = ["json", "http2", "uuid"] }
 shuttle-rocket = "0.42.0"
 shuttle-runtime = "0.42.0"
 tokio = "1.26.0"
