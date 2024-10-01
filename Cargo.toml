@@ -8,7 +8,7 @@ rust-version = "1.72.0"
 
 [dependencies]
 rocket = { version = "=0.5.1", features = ["json", "http2", "uuid"] }
-shuttle-rocket = "0.42.0"
+shuttle-rocket = "0.48.0"
 shuttle-runtime = "0.42.0"
 tokio = "1.26.0"
 
